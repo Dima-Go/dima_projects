@@ -2,7 +2,7 @@ import random
 
 
 def play():
-    user = input(f"Throw # {count}. Type 'r' for Rock, 'p' for Paper or 's' for Scissors: ")
+    user = input(f"Throw # {count +1}. Type 'r' for Rock, 'p' for Paper or 's' for Scissors: ")
     computer = random.choice(['r', 'p', 's'])
     if user == computer:
         tie_count.append(1)
@@ -36,15 +36,15 @@ def wrong(player):
 
 games = 5
 print(f"Play Rock/Paper/Scissors with the Computer, best out of {games}")
-count = 1
+count = 0
 win_count = []
 lose_count = []
 tie_count = []
 
-while count < games + 1:
+while count < games:
     print(play())
     count += 1
-    if count == games + 1:
+    if count == games:
         print("The game is over")
         break
 print(f"Wins = {len(win_count)}, Loses = {len(lose_count)}, Ties = {len(tie_count)}")
